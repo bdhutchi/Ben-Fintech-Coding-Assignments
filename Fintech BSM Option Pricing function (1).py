@@ -58,11 +58,11 @@ print(BSMOptionPrice('call',100.0,75.0,0.5,.0125,.35))
             Rho=-K*T*np.exp(-r*T)*ss.norm.cdf(-d2)
         else:
             Opt_Price= 'Error: option type incorrect. Choose P for a put option or C for a call option.'
-        print Opt_Price
-        print 'Delta = {}'.format(Delta)
-        print 'Gamma = {}'.format(Gamma)
-        print 'Vega = {}'.format(Vega)
-        print 'Theta = {}'.format(Theta)
-        print 'Rho = {}'.format(Rho)
+ print Opt_Price
+ print 'Delta = {}'.format(Delta)
+ print 'Gamma = {}'.format(Gamma)
+ print 'Vega = {}'.format(Vega)
+ print 'Theta = {}'.format(Theta)
+ print 'Rho = {}'.format(Rho)
 
 

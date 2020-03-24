@@ -41,28 +41,28 @@ print(BSMOptionPrice('call',100.0,75.0,0.5,.0125,.35))
 
 # In[ ]:
 
-if option_type in ['C','P']:
-    if option_type in ['C']:
-        Opt_Price=S*ss.norm.cdf(d1)-K*np.exp(-r*T)*ss.norm.cdf(d2)
-        Delta=ss.norm.cdf(d1)
-        Gamma=ss.norm.cdf(d1)/(S*vol*np.sqrt(T))
-        Vega=S*ss.norm.cdf(d1)*np.sqrt(T)
-        Theta=-(S*ss.norm.cdf(d1)*vol)/(2*np.sqrt(T))-r*K*np.exp(-r*T)*ss.norm.cdf(d2)
-        Rho=K*T*np.exp(-r*T)*ss.norm.cdf(d2)
-    else:
-        Opt_Price=K*np.exp(-r*T)*ss.norm.cdf(-d2)-S*ss.norm.cdf(-d1)
-        Delta=-ss.norm.cdf(-d1)
-        Gamma=ss.norm.cdf(d1)/(S*vol*np.sqrt(T))
-        Vega=S*ss.norm.cdf(d1)*np.sqrt(T)
-        Theta=-(S*ss.norm.cdf(d1)*vol)/(2*np.sqrt(T))+r*K*np.exp(-r*T)*ss.norm.cdf(-d2)
-        Rho=-K*T*np.exp(-r*T)*ss.norm.cdf(-d2)
-else:
-    Opt_Price= 'Error: option type incorrect. Choose P for a put option or C for a call option.'
-print Opt_Price
-print 'Delta = {}'.format(Delta)
-print 'Gamma = {}'.format(Gamma)
-print 'Vega = {}'.format(Vega)
-print 'Theta = {}'.format(Theta)
-print 'Rho = {}'.format(Rho)
+    if option_type in ['C','P']:
+        if option_type in ['C']:
+            Opt_Price=S*ss.norm.cdf(d1)-K*np.exp(-r*T)*ss.norm.cdf(d2)
+            Delta=ss.norm.cdf(d1)
+            Gamma=ss.norm.cdf(d1)/(S*vol*np.sqrt(T))
+            Vega=S*ss.norm.cdf(d1)*np.sqrt(T)
+            Theta=-(S*ss.norm.cdf(d1)*vol)/(2*np.sqrt(T))-r*K*np.exp(-r*T)*ss.norm.cdf(d2)
+            Rho=K*T*np.exp(-r*T)*ss.norm.cdf(d2)
+        else:
+            Opt_Price=K*np.exp(-r*T)*ss.norm.cdf(-d2)-S*ss.norm.cdf(-d1)
+            Delta=-ss.norm.cdf(-d1)
+            Gamma=ss.norm.cdf(d1)/(S*vol*np.sqrt(T))
+            Vega=S*ss.norm.cdf(d1)*np.sqrt(T)
+            Theta=-(S*ss.norm.cdf(d1)*vol)/(2*np.sqrt(T))+r*K*np.exp(-r*T)*ss.norm.cdf(-d2)
+            Rho=-K*T*np.exp(-r*T)*ss.norm.cdf(-d2)
+        else:
+            Opt_Price= 'Error: option type incorrect. Choose P for a put option or C for a call option.'
+        print Opt_Price
+        print 'Delta = {}'.format(Delta)
+        print 'Gamma = {}'.format(Gamma)
+        print 'Vega = {}'.format(Vega)
+        print 'Theta = {}'.format(Theta)
+        print 'Rho = {}'.format(Rho)
 
 
